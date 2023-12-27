@@ -1,8 +1,8 @@
 import re
 
-import INIT
-import ZipFolder
-from FileFolderSearch import FolderSearch, PatternMaker
+import FileFolderSearchZipCopy.INIT as INIT
+import FileFolderSearchZipCopy.ZipFolder as ZipFolder
+from FileFolderSearchZipCopy.FileFolderSearch import FolderSearch, PatternMaker
 
 """
 主体暖通空调：06-03-C2-V001、06-03-C2-V002、06-03-C2-V003、06-03-C2-V005、06-03-C2-V006、
@@ -78,7 +78,7 @@ for str in match_str_list:
 # Step2: Zip the folders to Desktop
 new_folder = INIT.Desktop_ROOT + "1111/"
 try:
-    match_list = FolderSearch(INIT.CNCC2_ROOT).fine_folders_with_keyword_list(
+    match_list = FolderSearch(INIT.CNCC2_ROOT).find_folders_with_keyword_list(
         match_str_list
     )
     for fold in match_list:
