@@ -14,6 +14,10 @@ class PatternMaker:
 
     def __init__(self, which_company: str) -> None:
         self._which_company = which_company
+        self.all_2526 = [
+            "2526biad",
+            "2426decoration",
+        ]
 
     def get_pattern(self) -> str:
         match self._which_company:

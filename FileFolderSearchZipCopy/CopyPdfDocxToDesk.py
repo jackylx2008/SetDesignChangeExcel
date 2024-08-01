@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 
 import INIT
@@ -94,7 +95,7 @@ def copy_pdf_docx_B25B26(
                 copy_files_to_destination(files_list, destination_path)
             else:
                 print(files_list)
-                raise ValueError("More than one file to copy")
+                raise ValueError("More than one pdf file to copy")
         else:
             raise ValueError(
                 "List is empty. Cannot perform operation with an empty list."
@@ -140,7 +141,7 @@ def copy_docx_pdf_24(destination_path: str):
                     copy_files_to_destination(files_list, destination_path)
                 else:
                     print(files_list)
-                    raise ValueError("More than one file to copy")
+                    raise ValueError("More than one pdf file to copy")
             else:
                 raise ValueError(
                     "List is empty. Cannot perform operation with an empty list."

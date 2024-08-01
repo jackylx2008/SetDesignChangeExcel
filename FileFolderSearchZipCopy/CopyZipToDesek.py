@@ -74,9 +74,33 @@ for str in match_str_list:
     print(str)
 
 # Step2: Zip the folders to Desktop
-is_B25B26 = True
+is_B25B26 = False
 is_B24 = False
+is_B23 = True
 new_folder = INIT.Desktop_ROOT + "1111/"
+if is_B23:
+    try:
+        B23 = [
+            INIT.CNCC2_ROOT + "12 北京院-B23地块/B23设计变更/",
+            INIT.CNCC2_ROOT + "42 金螳螂/B23精装变更/",
+        ]
+        match_list_list = []
+        for folder in B23:
+            temp_list = FolderSearch(folder).find_folders_with_keyword_list(
+                match_str_list
+            )
+            match_list_list.append(temp_list)
+
+        print(match_list_list)
+
+        for list in match_list_list:
+            for folder in list:
+                ZipFolder.zip_folder(folder, new_folder)
+                # print(folder)
+                pass
+    except IndexError:
+        print("IndexError: match_list is empty")
+
 if is_B24:
     try:
         B24 = [
